@@ -121,7 +121,7 @@ const [showLogin, setShowLogin] = useState(false);
             </form>
             <div className="links">
               <a href="https://accounts.google.com/v3/signin/recoveryidentifier?ard=AHwGkRlCdvbl0AEXUjNnXxa8ho21NVUrW6V8vV3werBju8Vj4AKOJonOfCS09rLSszKeF-MCowRcQuxdgSGG5PBwFz1Ppd7WENTvCrUeCa2vHzK0Ht3p6FM&fpOnly=1&hl=en&service=mail&flowName=GlifWebSignIn&dsh=S-468234728%3A1733264926697843&ddm=1" target="_blank" rel="noopener noreferrer">Forgot your password?</a>
-              <a href="#register">Don't have an account?   Register</a>
+              <a href="#register">Don't have an account? Register</a>
             </div>
             <button
               className="close-button" onClick={() => setShowLogin(false)}
