@@ -1,198 +1,163 @@
-/*Margenes de pagina*/
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  color: #333;
-  background: #b7d2f0;
+  box-sizing: border-box;
+  color: #fff;
 }
-.home-container {
+
+.app-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: #f8f9fa;
 }
 
-/*Header*/
+
 .header {
-  background-color: #2986c8;
-  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px 20px;
+  background-color: #1c2b50;
+  color: #fff;
 }
+
 .logo {
-  font-size: 24px;
+  height: 50px;
+}
+
+.login-button {
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
   font-weight: bold;
 }
-.logotipo {
-  height: 90px;
-  width: 200px;
-}
 
-/*Imagen y formulario de entrada*/
-
-.auth-buttons button {
-  margin-left: 10px;
-  padding: 5px 15px;
-  border: none;
-  cursor: pointer;
-  font-size: 14px;
-}
-.register-button {
-  background-color: #007bff;
-  color: white;
-  border-radius: 5px;
-}
-.login-button {
-  background-color: #ffffff;
-  color: #007bff;
-  border: 1px solid #007bff;
-  border-radius: 5px;
+.login-button:hover {
+  background-color: #357abd;
 }
 
 .banner {
-  display: grid;
-  grid-template-columns: 2fr 2fr;
-  align-items: center;
-  justify-items: center;
-  background-color: #b7d2f0;
+  position: relative;
+  text-align: center;
+  color: white;
 }
 
 .banner-image {
-  background-image: url("../public/mediacl.png");
-  width: 500px;
-  height: 320px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  margin-top: 50px;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
 }
 
 .banner-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-left: -60px;
-  width: 400px;
-  background-color: #9696a0;
-   margin-top: 60px;
- padding: 35px;
-  height: 250px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.5;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.specialities {
+  padding: 20px;
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
+.specialities-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #1c2b50;
+}
+
+.specialities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  padding: 0 10px;
+}
+
+.speciality-card {
+  background-color: #6383d4;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.speciality-image {
+  width: 100%;
+  height: 150px;
   border-radius: 10px;
 }
-.banner-buttons button {
-  margin: 15px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.register-banner-button {
-  background-color: #007bff;
-  color: white;
-}
-.access-banner-button {
-  background-color: #6c757d;
-  color: white;
+
+.speciality-text {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #fff;
 }
 
-/*Especialidades*/
-
-.specialties {
-  padding: 50px;
-  max-width: 900px;
-  gap: 54px;
+.footer {
+  margin-top: auto;
+  background-color: #1c2b50;
+  color: #fff;
   text-align: center;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-}
-
-.especiality-img {
+  padding: 10px 15px; /* Reduce el padding */
+  font-size: 12px; /* Reduce el tamaño de la fuente */
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 150px;
-  padding: 10px;
-  border-radius: 15px;
-  background-color: #9696a0;
-  width: 200px;
-  justify-content: center;
 }
 
-/*Footer*/
-
-.footer {
+.footer-top {
   display: flex;
-  flex-direction: row;
-  background-color: #015c92;
-  color: black;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 5px; /* Menos espacio entre las secciones */
+}
+
+.footer-logo {
+  height: 80px; /* Reduce el tamaño del logo */
 }
 
 .footer-info {
-  display: flex;
-  flex-direction: row;
-  height: 50px;
-  padding: 0px;
-  padding-top: 50px;
-  
+  text-align: left;
+  line-height: 1.2; /* Compacta las líneas de texto */
 }
 
-.footer-links {
+.footer-bottom {
   display: flex;
-  margin-top: 50px;
-  width: 50%;
-  justify-content: space-around;
-  color: #007bff;
-  text-decoration: none;
-  position: relative;
-  font-size: 30px;
-  padding-left: 350px;
-  padding-bottom: -60px;
-}
-
-.imagen {
-  height: 100px;
-  width: 200px;
-}
-
-.footer-img {
-  display: flex;
-  height: 50px;
-  margin-top: 50px;
-  width: 20%;
-  padding-left: 450px;
-}
-
-.final {
-  background-color: #015c92;
-  padding: 20px;
-  text-align: center;
-}
-.logo-test {
-  display: flex;
-  text-align: justify;
-  margin-left: 25px;
-  width: 250px;
-  font-size: 15px;
-}
-.logotipo-f {
-  display: flex;
-  justify-content: center;
-  width: 300px;
-  margin-top: 20px;
-}
-.websites {
-  display: flex;
-}
-.footer-content {
-  width: 100%;
-}
-.footer-info-parent {
-  display: flex;
-  padding-left: 250px;
-  padding-right: 250px;
   justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  border-top: 1px solid #fff;
+  padding-top: 5px; /* Reduce el espacio superior */
+}
+
+.footer-icons {
+  display: flex;
+  gap: 8px; /* Menos espacio entre los íconos */
+}
+
+.social-icon {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px; /* Reduce el tamaño de los íconos */
+  cursor: pointer;
+}
+
+.social-icon:hover {
+  color: #4a90e2;
 }
 
 /*CSS del log in*/
@@ -231,7 +196,7 @@ body {
   width: 60%;
   padding: 10px;
   background-color: #1e5b7e;
-  color: white;
+  color: rgb(255, 255, 255);
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -267,3 +232,10 @@ body {
 .links a:hover {
   text-decoration: underline;
 }
+
+
+
+
+
+
+

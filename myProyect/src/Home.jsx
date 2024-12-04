@@ -3,115 +3,74 @@ import "./Home.css";
 
 const Home = () => {
   const [showLogin, setShowLogin] = useState(false);
-
-  const specialtiesOBJ = [
-    {
-      img: "../public/oncologo.png",
-      title: "Oncology",
-    },
-    {
-      img: "../public/endocriono.png",
-      title: "Endocrinology",
-    },
-    {
-      img: "../public/tramatologia.png",
-      title: "Traumatology",
-    },
-    {
-      img: "../public/Oftalmologo.png",
-      title: "Ophthalmologist",
-    },
-    {
-      img: "../public/medicoInterno.png",
-      title: "Internal Physcian",
-    },
-    {
-      img: "../public/ginecologo.png",
-      title: "Gynaecology",
-    },
+  const specialities = [
+    { name: "Endocrino", image: "/endocriono.png" },
+    { name: "Ginecología", image: "/ginecologo.png" },
+    { name: "Oftalmología", image: "/Oftalmologo.png" },
+    { name: "Traumatología", image: "/tramatologia.png" },
+    { name: "Oncología", image: "/oncologo.png" },
+    { name: "Medicina Interna", image: "/medicoInterno.png" },
   ];
-
-  const loadSpecieltes = () => {
-    return specialtiesOBJ.map((obj, index) => {
-      return (
-        <>
-          <div key={index} className="especiality-img">
-            <img className="imagen" src={obj.img} />
-            <h3>{obj.title}</h3>
-          </div>
-        </>
-      );
-    });
-  };
   return (
-    <div className="home-container">
+    <div className="app-container">
+      {/* Header */}
       <header className="header">
-        <div className="logo">MediCare</div>
-        <img className="logotipo" src="../public/logotipo.png"></img>
+        <img src="../public/logo.png" alt="Logo" className="logo" />
+        <button
+          className="access-banner-button"
+          onClick={() => setShowLogin(true)}
+        >
+          Log in
+        </button>
       </header>
 
-      <main className="main-content">
-        <div className="banner">
-          <div className="banner-image"></div>
-          <div className="banner-text">
-            <h1>Welcome to MediCare!</h1>
-            <p>Log in as a doctor or patient</p>
-            <div className="banner-buttons">
-              <button className="register-banner-button">Register</button>
-              <button
-                className="access-banner-button"
-                onClick={() => setShowLogin(true)}
-              >
-                Log in
-              </button>
+      {/* Banner */}
+      <div className="banner">
+        <img src="../public/mediacl.png" className="banner-image" />
+        <h1 className="banner-text">
+          Explicación de <br /> funcionalidad de la web
+        </h1>
+      </div>
+
+      {/* Specialities Section */}
+      <section className="specialities">
+        <h2 className="specialities-title">MEDICAL ESPECIALITIES</h2>
+        <div className="specialities-grid">
+          {specialities.map((speciality, index) => (
+            <div className="speciality-card" key={index}>
+              <img
+                src={speciality.image}
+                alt={speciality.name}
+                className="speciality-image"
+              />
+              <p className="speciality-text">{speciality.name}</p>
             </div>
-          </div>
+          ))}
         </div>
+      </section>
 
-        <section className="specialties">
-          <h2>Medical Specialities</h2>
-          <div className="specialties">{loadSpecieltes()}</div>
-        </section>
-      </main>
-
+      {/* Footer */}
       <footer className="footer">
-        <div>
-          <img className="logotipo-f" src="../public/logotipo.png"></img>
-          <p className="logo-test">
-            This is our website to access medical services in an easy and simple
-            way, you can consult and request your changes.
-          </p>
+        <div className="footer-top">
+          <img src="../public/logo.png" alt="Logo" className="footer-logo" />
+          <div className="footer-info">
+            <p>988 725 255</p>
+            <p>Luis Morote 8, Las Palmas de Gran Canaria</p>
+            <p>hospital@medicare.com</p>
+          </div>
         </div>
-        <div className="footer-content">
-          <div className="websites">
-            <div className="footer-links">
-              <a href="/">Home</a>
-              <a href="/">Specialities</a>
-              <a href="/">Contact</a>
-            </div>
-            <div className="footer-img">
-              <img src="../public/instagram.png" />
-              <img src="../public/x.png" />
-              <img src="../public/facebook.png" />
-            </div>
-          </div>
-          <div className="footer-info-parent">
-            <div className="footer-info">
-              <img src="../public/llamar.png" />
-              <p>998-725-255</p>
-            </div>
-            <div className="footer-info">
-              <img src="../public/localizacion.png" />
-              <p>Luis Morote 8, Las Palmas de Gran Canaria</p>
-            </div>
-            <div className="footer-info">
-              <img src="../public/correo.png" />
-              <p>medicare@hospital.com</p>
-            </div>
-          </div>
-          <div className="final">
-            <hr />
-            <p>© 2024 MediCare | All Rights Reserved</p>
+        <div className="footer-bottom">
+          <p>© 2023 MediCare - All Rights Verifique</p>
+          <div className="footer-icons">
+            <a href="../public/instagram.png" className="social-icon">
+  
+            </a>
+            <a href="../public/facebook.png" className="social-icon">
+
+            </a>
+            <a href="../public/x.png" className="social-icon">
+ 
+            </a>
           </div>
         </div>
       </footer>
@@ -139,7 +98,7 @@ const Home = () => {
               >
                 Forgot your password?
               </a>
-              <a href="#register">Don't have an account? Register</a>
+              <a href="#register">Dont have an account? Register</a>
             </div>
             <button
               className="close-button"
@@ -154,5 +113,4 @@ const Home = () => {
     </div>
   );
 };
-
 export default Home;
